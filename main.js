@@ -1,8 +1,7 @@
-module.exports = {
+var code = {
 
 
   calcTax: function(amount){
-
 
     if(amount <= 10) {
 
@@ -10,17 +9,16 @@ module.exports = {
 
     }else if (numCheck(10,20)) {
 
-      return calcRate(10,7) +1;
+      return calcRate(10,7) + 1;
 
     }else if (numCheck(20,30)) {
 
-      return calcRate(20,5) +2;
+      return calcRate(20,5) + 1.7;
 
     }else {
 
-      return calcRate(30,3) +3;
+      return calcRate(30,3) + 2.2;
     }
-
 
 
     function numCheck(min, max){
@@ -30,8 +28,12 @@ module.exports = {
     function calcRate(limit, percent){
       return ((amount - (limit % amount)) * percent / 100);
     }
-
   }
-
 };
 
+module.exports = code;
+
+
+console.log(
+  code.calcTax(25)
+);
