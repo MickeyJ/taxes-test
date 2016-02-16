@@ -1,6 +1,5 @@
 var code = {
 
-
   calcTax: function(amount){
 
     if(amount <= 10) {
@@ -19,14 +18,13 @@ var code = {
 
       return calcRate(30,3) + 2.2;
     }
-
-
+    
     function numCheck(min, max){
       return amount > min && amount <= max;
     }
 
     function calcRate(limit, percent){
-      return ((amount - (limit % amount)) * percent / 100);
+      return (amount - limit) * percent / 100;
     }
   }
 };
